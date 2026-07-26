@@ -8,3 +8,6 @@ pool:
 steps:
   script: python3 --version
   displayName: 'Checking Python Version'
+
+  script: git --version
+  displayName: 'Checking git Version'
