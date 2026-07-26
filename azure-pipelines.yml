@@ -6,10 +6,5 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- script: echo Hello, Azure Pipelines!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Running a multi-line script
-    echo This is the second line
-  displayName: 'Run a multi-line script'
+  script: python --version
+  displayName: 'Checking Python Version'
