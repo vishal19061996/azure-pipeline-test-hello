@@ -7,26 +7,12 @@ pool:
 
 steps:
   - script: |
-      python3 --version
-      echo "Checked Python version"
-    displayName: 'Checking Python Version'
+      docker --version
+      echo "Checked Docker version"
+    displayName: 'Checking Docker Version'
 
   - script: |
+      sudo systemctl status docker
       python3 helloworld.py
-      echo "running Python helloworld program"
-    displayName: 'running Python helloworld'      
-
-  - script: |
-      git --version
-      echo "Checked Git version"
-    displayName: 'Checking Git Version'
-
-  - script: |
-      tree --version
-      echo "Checked tree version"
-    displayName: 'Checking Tree Version'
-
-  - script: |
-      node -v
-      echo "Checked Node.js version"
-    displayName: 'Checking Node.js Version'
+      echo "Checking Docker engine status"
+    displayName: 'Checking Docker engine status'
