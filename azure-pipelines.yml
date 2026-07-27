@@ -1,13 +1,13 @@
 # Basic pipeline example
 trigger:
-- main
+  - main
 
 pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-  script: python3 --version
-  displayName: 'Checking Python Version'
+  - script: python3 --version
+    displayName: 'Checking Python Version'
 
-  script: git --version
-  displayName: 'Checking git Version'
+  - script: git --version
+    displayName: 'Checking Git Version'
