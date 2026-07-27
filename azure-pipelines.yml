@@ -12,7 +12,7 @@ steps:
     displayName: 'Checking Python Version'
 
   - script: |
-      python3 helloworld.python3
+      python3 helloworld.py
       echo "running Python helloworld program"
     displayName: 'running Python helloworld'      
 
