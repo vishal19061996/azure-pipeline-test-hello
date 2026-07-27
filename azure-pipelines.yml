@@ -1,9 +1,8 @@
-# Basic pipeline example
 trigger:
   - main
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'ubuntu-24.04'
 
 steps:
   - script: |
@@ -12,7 +11,26 @@ steps:
     displayName: 'Checking Docker Version'
 
   - script: |
-      sudo systemctl status docker
-      python3 helloworld.py
-      echo "Checking Docker engine status"
-    displayName: 'Checking Docker engine status'
+      docker info
+      echo "Checking Docker Engine Status"
+    displayName: 'Checking Docker Engine Status'
+
+  - script: |
+      docker build -t my-python-app .
+      echo "Docker Image Built Successfully"
+    displayName: 'Building Docker Image'
+
+  - script: |
+      docker images
+      echo "Listing Docker Images"
+    displayName: 'Docker Image Listing'
+
+  - script: |
+      docker container ls
+      echo "Listing Running Docker Containers"
+    displayName: 'Docker Container Listing'
+
+  - script: |
+      docker ps -a
+      echo "Listing All Containers"
+    displayName: 'Listing All Containers'
