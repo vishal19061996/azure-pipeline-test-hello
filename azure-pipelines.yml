@@ -6,14 +6,22 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-  - script: python3 --version
+  - script: |
+      python3 --version
+      echo "Checked Python version"
     displayName: 'Checking Python Version'
 
-  - script: git --version
+  - script: |
+      git --version
+      echo "Checked Git version"
     displayName: 'Checking Git Version'
 
-  - script: tree --version
-    displayName: 'Checking tree version'
+  - script: |
+      tree --version
+      echo "Checked tree version"
+    displayName: 'Checking Tree Version'
 
-  - script: node -v
-    displayName: 'Checking node version' 
+  - script: |
+      node -v
+      echo "Checked Node.js version"
+    displayName: 'Checking Node.js Version'
