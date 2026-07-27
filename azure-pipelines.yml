@@ -8,29 +8,34 @@ steps:
   - script: |
       docker --version
       echo "Checked Docker version"
-    displayName: 'Checking Docker Version'
+    displayName: 'Check Docker Version'
 
   - script: |
       docker info
-      echo "Checking Docker Engine Status"
-    displayName: 'Checking Docker Engine Status'
+      echo "Checked Docker Engine Status"
+    displayName: 'Check Docker Engine Status'
 
   - script: |
       docker build -t my-python-app .
-      echo "Docker Image Built Successfully"
-    displayName: 'Building Docker Image'
+      echo "Docker image built successfully"
+    displayName: 'Build Docker Image'
 
   - script: |
       docker images
-      echo "Listing Docker Images"
-    displayName: 'Docker Image Listing'
+      echo "Listed Docker images"
+    displayName: 'List Docker Images'
+
+  - script: |
+      docker run --rm my-python-app
+      echo "Docker container executed successfully"
+    displayName: 'Run Docker Container'
 
   - script: |
       docker container ls
-      echo "Listing Running Docker Containers"
-    displayName: 'Docker Container Listing'
+      echo "Listed running Docker containers"
+    displayName: 'List Running Containers'
 
   - script: |
       docker ps -a
-      echo "Listing All Containers"
-    displayName: 'Listing All Containers'
+      echo "Listed all Docker containers"
+    displayName: 'List All Containers'
